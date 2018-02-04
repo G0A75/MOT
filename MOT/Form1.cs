@@ -18,8 +18,11 @@ namespace MOT
         private WaveOutEvent outputDevice;
         private AudioFileReader audioFile;
         int n = 0;
+     
         ArrayList musicFile = new ArrayList();
+       
         string[] musicFiles;
+        
         public Form1()
         {
             InitializeComponent();
@@ -36,7 +39,7 @@ namespace MOT
         {
             outputDevice?.Stop();
             outputDevice.PlaybackStopped += OnPlaybackStopped;
-
+            
         }
 
         private void OnPlaybackStopped(object sender, StoppedEventArgs args)
@@ -57,17 +60,21 @@ namespace MOT
 
         private void PlayMusic()
         {
+
             n = visualCheckedListBox1.SelectedIndex;
             if (outputDevice == null)
             {
                 outputDevice = new WaveOutEvent();
-
+                
             }
 
             if (audioFile == null)
             {
+              
                 audioFile = new AudioFileReader(musicFiles[n]);
                 outputDevice.Init(audioFile);
+                
+                
             }
             else if (audioFile != null)
             {
@@ -75,10 +82,12 @@ namespace MOT
                 outputDevice?.Stop();
 
                 outputDevice.Init(audioFile);
-
+               
             }
+           
 
             outputDevice.Play();
+            outputDevice.Volume = (float)trackBar1.Value / 100;
         }
         #endregion
 
@@ -88,38 +97,27 @@ namespace MOT
             FolderBrowserDialog addMusic = new FolderBrowserDialog();
             addMusic.ShowDialog();
             string musicFolder = addMusic.SelectedPath;
-            
-            try
-            {
-                musicFiles = Directory.EnumerateFiles(musicFolder, "*.*", SearchOption.AllDirectories)
-                    .Where(s => s.EndsWith(";
-                foreach(string o in musicFiles)
+            var _extensions = new List<string>
                 {
-                    musicFile.Add(o);
-                }
-                musicFiles = (string[])musicFile.ToArray(typeof(string));
-               
-            }
+                    "*.mp3",
+                    "*.wav",
+                    "*.wma",
+                    "*.aiff",
+                    "*.flac"
+                    
+                };
             
-            catch (Exception ex)
-            {
-                MessageBox.Show(@"Unable to open folder." + Environment.NewLine + ex.Message, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            int what = visualCheckedListBox1.Items.Count;
-            int Filelength = musicFolder.Length + 1;
             visualCheckedListBox1.Items.Clear();
-            
-            if (visualCheckedListBox1.Items.Count == 0)
+
+            var _files = FileHelper.SearchDirectory(musicFolder, _extensions, true);
+            musicFiles = _files.ToArray();
+            int fileLength;
+            foreach (string _file in _files)
             {
-                
-                for (int i = 0; i < musicFiles.Length; i++)
-                {
-                    int temp = musicFiles[i].LastIndexOf('\\');
-                    visualCheckedListBox1.Items.Add(musicFiles[i].Remove(0, temp+1));
-                }
-               
+                fileLength = _file.LastIndexOf('\\');
+                visualCheckedListBox1.Items.Add(_file.Remove(0,fileLength+1));
             }
-            
+
         }
     
         private void VisualCheckedListBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -128,6 +126,17 @@ namespace MOT
 
         }
 
-       
+        private void trackBar1_ValueChanged(object sender, EventArgs e)
+        {
+
+            if (outputDevice.Volume <= 1.0f)
+            {
+
+                outputDevice.Volume = (float)trackBar1.Value / 100;
+                visualLabel1.Text = outputDevice.Volume.ToString();
+            }
+         
+        }
     }
+   
 }

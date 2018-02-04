@@ -29,14 +29,18 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            VisualPlus.Structure.TextStyle textStyle4 = new VisualPlus.Structure.TextStyle();
+            VisualPlus.Structure.TextStyle textStyle6 = new VisualPlus.Structure.TextStyle();
+            VisualPlus.Structure.TextStyle textStyle5 = new VisualPlus.Structure.TextStyle();
             VisualPlus.Structure.TextStyle textStyle1 = new VisualPlus.Structure.TextStyle();
             VisualPlus.Structure.TextStyle textStyle2 = new VisualPlus.Structure.TextStyle();
-            VisualPlus.Structure.TextStyle textStyle3 = new VisualPlus.Structure.TextStyle();
-            VisualPlus.Structure.TextStyle textStyle4 = new VisualPlus.Structure.TextStyle();
             this.visualCheckedListBox1 = new VisualPlus.Toolkit.Controls.DataManagement.VisualCheckedListBox();
             this.btPlay = new VisualPlus.Toolkit.Controls.Interactivity.VisualButton();
             this.btLoadFolder = new VisualPlus.Toolkit.Controls.Interactivity.VisualButton();
             this.btStop = new VisualPlus.Toolkit.Controls.Interactivity.VisualButton();
+            this.trackBar1 = new System.Windows.Forms.TrackBar();
+            this.visualLabel1 = new VisualPlus.Toolkit.Controls.Interactivity.VisualLabel();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             this.SuspendLayout();
             // 
             // visualCheckedListBox1
@@ -58,18 +62,18 @@
             this.visualCheckedListBox1.HorizontalScrollbar = false;
             this.visualCheckedListBox1.ItemNormal = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.visualCheckedListBox1.ItemSelected = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(183)))), ((int)(((byte)(230)))));
-            this.visualCheckedListBox1.Location = new System.Drawing.Point(79, 29);
+            this.visualCheckedListBox1.Location = new System.Drawing.Point(493, 12);
             this.visualCheckedListBox1.MouseState = VisualPlus.Enumerators.MouseStates.Normal;
             this.visualCheckedListBox1.Name = "visualCheckedListBox1";
             this.visualCheckedListBox1.SelectionMode = System.Windows.Forms.SelectionMode.One;
-            this.visualCheckedListBox1.Size = new System.Drawing.Size(383, 165);
+            this.visualCheckedListBox1.Size = new System.Drawing.Size(635, 370);
             this.visualCheckedListBox1.TabIndex = 0;
             this.visualCheckedListBox1.Text = "visualCheckedListBox1";
-            textStyle1.Disabled = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(129)))), ((int)(((byte)(129)))));
-            textStyle1.Enabled = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            textStyle1.Hover = System.Drawing.Color.Empty;
-            textStyle1.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
-            this.visualCheckedListBox1.TextStyle = textStyle1;
+            textStyle4.Disabled = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(129)))), ((int)(((byte)(129)))));
+            textStyle4.Enabled = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            textStyle4.Hover = System.Drawing.Color.Empty;
+            textStyle4.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            this.visualCheckedListBox1.TextStyle = textStyle4;
             this.visualCheckedListBox1.SelectedIndexChanged += new System.EventHandler(this.VisualCheckedListBox1_SelectedIndexChanged);
             // 
             // btPlay
@@ -88,7 +92,7 @@
             this.btPlay.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.btPlay.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btPlay.Image = null;
-            this.btPlay.Location = new System.Drawing.Point(79, 279);
+            this.btPlay.Location = new System.Drawing.Point(711, 439);
             this.btPlay.MouseState = VisualPlus.Enumerators.MouseStates.Normal;
             this.btPlay.Name = "btPlay";
             this.btPlay.Size = new System.Drawing.Size(140, 45);
@@ -97,11 +101,11 @@
             this.btPlay.TextAlignment = System.Drawing.StringAlignment.Center;
             this.btPlay.TextImageRelation = System.Windows.Forms.TextImageRelation.Overlay;
             this.btPlay.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            textStyle2.Disabled = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(129)))), ((int)(((byte)(129)))));
-            textStyle2.Enabled = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            textStyle2.Hover = System.Drawing.Color.Empty;
-            textStyle2.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
-            this.btPlay.TextStyle = textStyle2;
+            textStyle6.Disabled = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(129)))), ((int)(((byte)(129)))));
+            textStyle6.Enabled = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            textStyle6.Hover = System.Drawing.Color.Empty;
+            textStyle6.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            this.btPlay.TextStyle = textStyle6;
             this.btPlay.Click += new System.EventHandler(this.BtPlay_Click);
             // 
             // btLoadFolder
@@ -120,7 +124,7 @@
             this.btLoadFolder.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.btLoadFolder.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btLoadFolder.Image = null;
-            this.btLoadFolder.Location = new System.Drawing.Point(3, 211);
+            this.btLoadFolder.Location = new System.Drawing.Point(493, 388);
             this.btLoadFolder.MouseState = VisualPlus.Enumerators.MouseStates.Normal;
             this.btLoadFolder.Name = "btLoadFolder";
             this.btLoadFolder.Size = new System.Drawing.Size(140, 45);
@@ -129,11 +133,11 @@
             this.btLoadFolder.TextAlignment = System.Drawing.StringAlignment.Center;
             this.btLoadFolder.TextImageRelation = System.Windows.Forms.TextImageRelation.Overlay;
             this.btLoadFolder.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            textStyle3.Disabled = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(129)))), ((int)(((byte)(129)))));
-            textStyle3.Enabled = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            textStyle3.Hover = System.Drawing.Color.Empty;
-            textStyle3.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
-            this.btLoadFolder.TextStyle = textStyle3;
+            textStyle5.Disabled = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(129)))), ((int)(((byte)(129)))));
+            textStyle5.Enabled = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            textStyle5.Hover = System.Drawing.Color.Empty;
+            textStyle5.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            this.btLoadFolder.TextStyle = textStyle5;
             this.btLoadFolder.Click += new System.EventHandler(this.BtLoadFolder_Click);
             // 
             // btStop
@@ -152,7 +156,7 @@
             this.btStop.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.btStop.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btStop.Image = null;
-            this.btStop.Location = new System.Drawing.Point(225, 279);
+            this.btStop.Location = new System.Drawing.Point(889, 439);
             this.btStop.MouseState = VisualPlus.Enumerators.MouseStates.Normal;
             this.btStop.Name = "btStop";
             this.btStop.Size = new System.Drawing.Size(140, 45);
@@ -161,25 +165,67 @@
             this.btStop.TextAlignment = System.Drawing.StringAlignment.Center;
             this.btStop.TextImageRelation = System.Windows.Forms.TextImageRelation.Overlay;
             this.btStop.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            textStyle4.Disabled = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(129)))), ((int)(((byte)(129)))));
-            textStyle4.Enabled = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            textStyle4.Hover = System.Drawing.Color.Empty;
-            textStyle4.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
-            this.btStop.TextStyle = textStyle4;
+            textStyle1.Disabled = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(129)))), ((int)(((byte)(129)))));
+            textStyle1.Enabled = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            textStyle1.Hover = System.Drawing.Color.Empty;
+            textStyle1.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            this.btStop.TextStyle = textStyle1;
             this.btStop.Click += new System.EventHandler(this.BtStop_Click);
+            // 
+            // trackBar1
+            // 
+            this.trackBar1.Location = new System.Drawing.Point(504, 502);
+            this.trackBar1.Maximum = 100;
+            this.trackBar1.Name = "trackBar1";
+            this.trackBar1.Size = new System.Drawing.Size(180, 45);
+            this.trackBar1.TabIndex = 4;
+            this.trackBar1.Value = 30;
+            this.trackBar1.ValueChanged += new System.EventHandler(this.trackBar1_ValueChanged);
+            // 
+            // visualLabel1
+            // 
+            this.visualLabel1.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            this.visualLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.visualLabel1.Location = new System.Drawing.Point(290, 452);
+            this.visualLabel1.MouseState = VisualPlus.Enumerators.MouseStates.Normal;
+            this.visualLabel1.Name = "visualLabel1";
+            this.visualLabel1.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            this.visualLabel1.Outline = false;
+            this.visualLabel1.OutlineColor = System.Drawing.Color.Red;
+            this.visualLabel1.OutlineLocation = new System.Drawing.Point(0, 0);
+            this.visualLabel1.ReflectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.visualLabel1.ReflectionSpacing = 0;
+            this.visualLabel1.ShadowColor = System.Drawing.Color.Black;
+            this.visualLabel1.ShadowDirection = 315;
+            this.visualLabel1.ShadowLocation = new System.Drawing.Point(0, 0);
+            this.visualLabel1.ShadowOpacity = 100;
+            this.visualLabel1.Size = new System.Drawing.Size(75, 23);
+            this.visualLabel1.TabIndex = 5;
+            this.visualLabel1.Text = "visualLabel1";
+            this.visualLabel1.TextAlignment = System.Drawing.StringAlignment.Near;
+            this.visualLabel1.TextLineAlignment = System.Drawing.StringAlignment.Center;
+            textStyle2.Disabled = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(129)))), ((int)(((byte)(129)))));
+            textStyle2.Enabled = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            textStyle2.Hover = System.Drawing.Color.Empty;
+            textStyle2.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            this.visualLabel1.TextStyle = textStyle2;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(571, 376);
+            this.ClientSize = new System.Drawing.Size(1140, 601);
+            this.Controls.Add(this.visualLabel1);
+            this.Controls.Add(this.trackBar1);
             this.Controls.Add(this.btStop);
             this.Controls.Add(this.btLoadFolder);
             this.Controls.Add(this.btPlay);
             this.Controls.Add(this.visualCheckedListBox1);
             this.Name = "Form1";
             this.Text = "Form1";
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -189,6 +235,8 @@
         private VisualPlus.Toolkit.Controls.Interactivity.VisualButton btPlay;
         private VisualPlus.Toolkit.Controls.Interactivity.VisualButton btLoadFolder;
         private VisualPlus.Toolkit.Controls.Interactivity.VisualButton btStop;
+        private System.Windows.Forms.TrackBar trackBar1;
+        private VisualPlus.Toolkit.Controls.Interactivity.VisualLabel visualLabel1;
     }
 }
 
