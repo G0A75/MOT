@@ -18,33 +18,32 @@ namespace MOT
         private WaveOutEvent outputDevice;
         private AudioFileReader audioFile;
         int n = 0;
-     
         ArrayList musicFile = new ArrayList();
-       
         string[] musicFiles;
+        
         
         public Form1()
         {
             InitializeComponent();
+            visualLabelVolume.Text = "Volume: "+ trackBar1.Value.ToString();
+            btPlay.Enabled = false;
+            
         }
 #region PlayBack
         
         private void BtPlay_Click(object sender, EventArgs e)
         {
             PlayMusic();
-           
         }
 
         private void BtStop_Click(object sender, EventArgs e)
         {
             outputDevice?.Stop();
             outputDevice.PlaybackStopped += OnPlaybackStopped;
-            
         }
 
         private void OnPlaybackStopped(object sender, StoppedEventArgs args)
-        {
-            
+        { 
             try
             {
                 outputDevice.Dispose();
@@ -60,21 +59,20 @@ namespace MOT
 
         private void PlayMusic()
         {
-
+           
             n = visualCheckedListBox1.SelectedIndex;
             if (outputDevice == null)
             {
                 outputDevice = new WaveOutEvent();
-                
             }
 
             if (audioFile == null)
             {
-              
+                
                 audioFile = new AudioFileReader(musicFiles[n]);
                 outputDevice.Init(audioFile);
-                
-                
+                btPlay.Enabled = true;
+                seekBar.Value = 0;
             }
             else if (audioFile != null)
             {
@@ -82,12 +80,23 @@ namespace MOT
                 outputDevice?.Stop();
 
                 outputDevice.Init(audioFile);
-               
+                seekBar.Value = 0;
             }
            
-
             outputDevice.Play();
-            outputDevice.Volume = (float)trackBar1.Value / 100;
+
+            double hours = audioFile.TotalTime.Hours;
+            double minutes = audioFile.TotalTime.Minutes;
+            double seconds = audioFile.TotalTime.Seconds;
+            visualLabel1.Text =hours.ToString("00")+":"+minutes.ToString("00")+":"+seconds.ToString("00");
+            seekBar.Minimum = 0;
+            seekBar.Maximum = (int)audioFile.TotalTime.TotalSeconds;
+            timeElapsed.Start();
+            
+
+
+
+            outputDevice.Volume = (float)trackBar1.Value / 200;
         }
         #endregion
 
@@ -104,7 +113,6 @@ namespace MOT
                     "*.wma",
                     "*.aiff",
                     "*.flac"
-                    
                 };
             
             visualCheckedListBox1.Items.Clear();
@@ -117,13 +125,11 @@ namespace MOT
                 fileLength = _file.LastIndexOf('\\');
                 visualCheckedListBox1.Items.Add(_file.Remove(0,fileLength+1));
             }
-
         }
     
         private void VisualCheckedListBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             PlayMusic();
-
         }
 
         private void trackBar1_ValueChanged(object sender, EventArgs e)
@@ -131,12 +137,28 @@ namespace MOT
 
             if (outputDevice.Volume <= 1.0f)
             {
-
-                outputDevice.Volume = (float)trackBar1.Value / 100;
-                visualLabel1.Text = outputDevice.Volume.ToString();
+                outputDevice.Volume = (float)trackBar1.Value / 200;
+                visualLabelVolume.Text = "Volume: "+trackBar1.Value.ToString();
             }
-         
         }
-    }
-   
+
+        private void timeElapsed_Tick(object sender, EventArgs e)
+        {
+            seekBar.Value += 1;
+            if (seekBar.Value == seekBar.Maximum)
+            {
+                timeElapsed.Stop();
+            }
+            
+            
+            
+        }
+
+        private void seekBar_Scroll(object sender, EventArgs e)
+        {
+            outputDevice?.Stop();
+            audioFile.CurrentTime = new TimeSpan(0, 0, 0, seekBar.Value, 0);
+            outputDevice.Play();
+        }
+    }  
 }
