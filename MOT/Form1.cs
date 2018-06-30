@@ -61,7 +61,7 @@ namespace MOT
         private void PlayMusic()
         {
 
-            n = visualCheckedListBox1.SelectedIndex;
+            // n = visualCheckedListBox1.SelectedIndex;
             if (outputDevice == null)
             {
                 outputDevice = new WaveOutEvent();
@@ -116,7 +116,7 @@ namespace MOT
                     "*.flac"
                 };
 
-            visualCheckedListBox1.Items.Clear();
+            // visualCheckedListBox1.Items.Clear();
 
             var _files = FileHelper.SearchDirectory(musicFolder, _extensions, true);
             musicFiles = _files.ToArray();
@@ -124,7 +124,7 @@ namespace MOT
             foreach (string _file in _files)
             {
                 fileLength = _file.LastIndexOf('\\');
-                visualCheckedListBox1.Items.Add(_file.Remove(0, fileLength + 1));
+                // visualCheckedListBox1.Items.Add(_file.Remove(0, fileLength + 1));
             }
         }
 
@@ -169,7 +169,7 @@ namespace MOT
         {
             rename = false;
             visualTextBoxAddPlaylist.Visible = true;
-            visualBtEnterNameOk.Visible = true;
+            // visualBtEnterNameOk.Visible = true;
 
         }
 
@@ -188,7 +188,7 @@ namespace MOT
 
             }
             visualTextBoxAddPlaylist.Visible = false;
-            visualBtEnterNameOk.Visible = false;
+            // visualBtEnterNameOk.Visible = false;
 
         }
 
@@ -201,7 +201,7 @@ namespace MOT
         {
             rename = true;
             visualTextBoxAddPlaylist.Visible = true;
-            visualBtEnterNameOk.Visible = true;
+            // visualBtEnterNameOk.Visible = true;
         }
     }
 }

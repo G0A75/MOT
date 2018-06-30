@@ -40,8 +40,6 @@
             VisualPlus.Structure.TextStyle textStyle9 = new VisualPlus.Structure.TextStyle();
             VisualPlus.Structure.TextStyle textStyle10 = new VisualPlus.Structure.TextStyle();
             VisualPlus.Structure.TextStyle textStyle11 = new VisualPlus.Structure.TextStyle();
-            VisualPlus.Structure.TextStyle textStyle13 = new VisualPlus.Structure.TextStyle();
-            VisualPlus.Structure.TextStyle textStyle14 = new VisualPlus.Structure.TextStyle();
             VisualPlus.Structure.TextStyle textStyle12 = new VisualPlus.Structure.TextStyle();
             this.btPlay = new VisualPlus.Toolkit.Controls.Interactivity.VisualButton();
             this.btLoadFolder = new VisualPlus.Toolkit.Controls.Interactivity.VisualButton();
@@ -58,14 +56,11 @@
             this.visualBtRenamePlaylist = new VisualPlus.Toolkit.Controls.Interactivity.VisualButton();
             this.visualBtLoadPlaylist = new VisualPlus.Toolkit.Controls.Interactivity.VisualButton();
             this.visualPlayListTabs = new VisualPlus.Toolkit.Controls.Navigation.VisualTabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.visualCheckedListBox1 = new VisualPlus.Toolkit.Controls.DataManagement.VisualCheckedListBox();
             this.visualTextBoxAddPlaylist = new VisualPlus.Toolkit.Controls.Editors.VisualTextBox();
-            this.visualBtEnterNameOk = new VisualPlus.Toolkit.Controls.Interactivity.VisualButton();
+            this.visualTabPage1 = new VisualPlus.Toolkit.Child.VisualTabPage();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.seekBar)).BeginInit();
             this.visualPlayListTabs.SuspendLayout();
-            this.tabPage1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btPlay
@@ -434,18 +429,8 @@
             // 
             // visualPlayListTabs
             // 
-            this.visualPlayListTabs.ArrowSelectorVisible = true;
-            this.visualPlayListTabs.ArrowSpacing = 10;
-            this.visualPlayListTabs.ArrowThickness = 5;
-            this.visualPlayListTabs.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(244)))), ((int)(((byte)(249)))));
-            this.visualPlayListTabs.Border.Color = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
-            this.visualPlayListTabs.Border.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(183)))), ((int)(((byte)(230)))));
-            this.visualPlayListTabs.Border.HoverVisible = true;
-            this.visualPlayListTabs.Border.Rounding = 6;
-            this.visualPlayListTabs.Border.Thickness = 1;
-            this.visualPlayListTabs.Border.Type = VisualPlus.Enumerators.ShapeType.Rounded;
-            this.visualPlayListTabs.Border.Visible = true;
-            this.visualPlayListTabs.Controls.Add(this.tabPage1);
+            this.visualPlayListTabs.Controls.Add(this.visualTabPage1);
+            this.visualPlayListTabs.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed;
             this.visualPlayListTabs.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.visualPlayListTabs.ItemSize = new System.Drawing.Size(100, 25);
             this.visualPlayListTabs.Location = new System.Drawing.Point(482, 0);
@@ -453,76 +438,20 @@
             this.visualPlayListTabs.Name = "visualPlayListTabs";
             this.visualPlayListTabs.SelectedIndex = 0;
             this.visualPlayListTabs.SelectorAlignment = System.Windows.Forms.TabAlignment.Top;
-            this.visualPlayListTabs.SelectorAlignment2 = System.Windows.Forms.TabAlignment.Bottom;
+            this.visualPlayListTabs.SelectorSpacing = 10;
             this.visualPlayListTabs.SelectorThickness = 4;
+            this.visualPlayListTabs.SelectorType = VisualPlus.Toolkit.Controls.Navigation.VisualTabControl.SelectorTypes.Arrow;
             this.visualPlayListTabs.SelectorVisible = false;
-            this.visualPlayListTabs.SelectorVisible2 = false;
             this.visualPlayListTabs.Separator = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(222)))), ((int)(((byte)(220)))));
             this.visualPlayListTabs.SeparatorSpacing = 2;
             this.visualPlayListTabs.SeparatorThickness = 2F;
             this.visualPlayListTabs.Size = new System.Drawing.Size(634, 398);
             this.visualPlayListTabs.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.visualPlayListTabs.State = VisualPlus.Enumerators.MouseStates.Normal;
-            this.visualPlayListTabs.TabHover = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(36)))), ((int)(((byte)(38)))));
             this.visualPlayListTabs.TabIndex = 14;
             this.visualPlayListTabs.TabMenu = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(61)))), ((int)(((byte)(73)))));
-            this.visualPlayListTabs.TabNormal = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(61)))), ((int)(((byte)(73)))));
-            this.visualPlayListTabs.TabPageBorder.Color = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
-            this.visualPlayListTabs.TabPageBorder.Rounding = 6;
-            this.visualPlayListTabs.TabPageBorder.Thickness = 1;
-            this.visualPlayListTabs.TabPageBorder.Type = VisualPlus.Enumerators.ShapeType.Rounded;
-            this.visualPlayListTabs.TabPageBorder.Visible = true;
-            this.visualPlayListTabs.TabSelected = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(76)))), ((int)(((byte)(88)))));
             this.visualPlayListTabs.TabSelector = System.Drawing.Color.Green;
-            this.visualPlayListTabs.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.visualPlayListTabs.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            this.visualPlayListTabs.TextNormal = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(181)))), ((int)(((byte)(187)))));
             this.visualPlayListTabs.TextRendering = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
-            this.visualPlayListTabs.TextSelected = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(220)))), ((int)(((byte)(227)))));
-            // 
-            // tabPage1
-            // 
-            this.tabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(244)))), ((int)(((byte)(249)))));
-            this.tabPage1.Controls.Add(this.visualBtEnterNameOk);
-            this.tabPage1.Controls.Add(this.visualCheckedListBox1);
-            this.tabPage1.Location = new System.Drawing.Point(4, 29);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(626, 365);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Loaded";
-            // 
-            // visualCheckedListBox1
-            // 
-            this.visualCheckedListBox1.AlternateColors = true;
-            this.visualCheckedListBox1.BackColorState.Disabled = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.visualCheckedListBox1.BackColorState.Enabled = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(244)))), ((int)(((byte)(249)))));
-            this.visualCheckedListBox1.Border.Color = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
-            this.visualCheckedListBox1.Border.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(183)))), ((int)(((byte)(230)))));
-            this.visualCheckedListBox1.Border.HoverVisible = true;
-            this.visualCheckedListBox1.Border.Rounding = 6;
-            this.visualCheckedListBox1.Border.Thickness = 1;
-            this.visualCheckedListBox1.Border.Type = VisualPlus.Enumerators.ShapeType.Rounded;
-            this.visualCheckedListBox1.Border.Visible = true;
-            this.visualCheckedListBox1.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            this.visualCheckedListBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.visualCheckedListBox1.FormatString = "";
-            this.visualCheckedListBox1.HorizontalExtent = 0;
-            this.visualCheckedListBox1.HorizontalScrollbar = false;
-            this.visualCheckedListBox1.ItemNormal = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.visualCheckedListBox1.ItemSelected = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(183)))), ((int)(((byte)(230)))));
-            this.visualCheckedListBox1.Location = new System.Drawing.Point(0, 0);
-            this.visualCheckedListBox1.MouseState = VisualPlus.Enumerators.MouseStates.Normal;
-            this.visualCheckedListBox1.Name = "visualCheckedListBox1";
-            this.visualCheckedListBox1.SelectionMode = System.Windows.Forms.SelectionMode.One;
-            this.visualCheckedListBox1.Size = new System.Drawing.Size(622, 360);
-            this.visualCheckedListBox1.TabIndex = 0;
-            textStyle13.Disabled = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(129)))), ((int)(((byte)(129)))));
-            textStyle13.Enabled = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            textStyle13.Hover = System.Drawing.Color.Empty;
-            textStyle13.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
-            this.visualCheckedListBox1.TextStyle = textStyle13;
-            this.visualCheckedListBox1.SelectedIndexChanged += new System.EventHandler(this.VisualCheckedListBox1_SelectedIndexChanged);
             // 
             // visualTextBoxAddPlaylist
             // 
@@ -560,15 +489,15 @@
             this.visualTextBoxAddPlaylist.Name = "visualTextBoxAddPlaylist";
             this.visualTextBoxAddPlaylist.PasswordChar = '\0';
             this.visualTextBoxAddPlaylist.ReadOnly = false;
+            this.visualTextBoxAddPlaylist.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.visualTextBoxAddPlaylist.Size = new System.Drawing.Size(236, 25);
             this.visualTextBoxAddPlaylist.TabIndex = 15;
-            this.visualTextBoxAddPlaylist.Text = "Playlist";
             this.visualTextBoxAddPlaylist.TextBoxWidth = 226;
-            textStyle14.Disabled = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(129)))), ((int)(((byte)(129)))));
-            textStyle14.Enabled = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            textStyle14.Hover = System.Drawing.Color.Empty;
-            textStyle14.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
-            this.visualTextBoxAddPlaylist.TextStyle = textStyle14;
+            textStyle12.Disabled = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(129)))), ((int)(((byte)(129)))));
+            textStyle12.Enabled = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            textStyle12.Hover = System.Drawing.Color.Empty;
+            textStyle12.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            this.visualTextBoxAddPlaylist.TextStyle = textStyle12;
             this.visualTextBoxAddPlaylist.Visible = false;
             this.visualTextBoxAddPlaylist.Watermark.ActiveColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.visualTextBoxAddPlaylist.Watermark.Font = new System.Drawing.Font("Segoe UI", 8.25F);
@@ -576,38 +505,31 @@
             this.visualTextBoxAddPlaylist.Watermark.Text = "Watermark text";
             this.visualTextBoxAddPlaylist.Watermark.Visible = false;
             // 
-            // visualBtEnterNameOk
+            // visualTabPage1
             // 
-            this.visualBtEnterNameOk.BackColorState.Disabled = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.visualBtEnterNameOk.BackColorState.Enabled = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.visualBtEnterNameOk.BackColorState.Hover = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.visualBtEnterNameOk.BackColorState.Pressed = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.visualBtEnterNameOk.Border.Color = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
-            this.visualBtEnterNameOk.Border.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(183)))), ((int)(((byte)(230)))));
-            this.visualBtEnterNameOk.Border.HoverVisible = true;
-            this.visualBtEnterNameOk.Border.Rounding = 6;
-            this.visualBtEnterNameOk.Border.Thickness = 1;
-            this.visualBtEnterNameOk.Border.Type = VisualPlus.Enumerators.ShapeType.Rounded;
-            this.visualBtEnterNameOk.Border.Visible = true;
-            this.visualBtEnterNameOk.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            this.visualBtEnterNameOk.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.visualBtEnterNameOk.Image = null;
-            this.visualBtEnterNameOk.Location = new System.Drawing.Point(125, 173);
-            this.visualBtEnterNameOk.MouseState = VisualPlus.Enumerators.MouseStates.Normal;
-            this.visualBtEnterNameOk.Name = "visualBtEnterNameOk";
-            this.visualBtEnterNameOk.Size = new System.Drawing.Size(62, 45);
-            this.visualBtEnterNameOk.TabIndex = 1;
-            this.visualBtEnterNameOk.Text = "OK";
-            this.visualBtEnterNameOk.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.visualBtEnterNameOk.TextImageRelation = System.Windows.Forms.TextImageRelation.Overlay;
-            this.visualBtEnterNameOk.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            textStyle12.Disabled = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(129)))), ((int)(((byte)(129)))));
-            textStyle12.Enabled = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            textStyle12.Hover = System.Drawing.Color.Empty;
-            textStyle12.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
-            this.visualBtEnterNameOk.TextStyle = textStyle12;
-            this.visualBtEnterNameOk.Visible = false;
-            this.visualBtEnterNameOk.Click += new System.EventHandler(this.visualBtEnterNameOk_Click);
+            this.visualTabPage1.BackColor = System.Drawing.Color.Transparent;
+            this.visualTabPage1.Border.Color = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
+            this.visualTabPage1.Border.Rounding = 6;
+            this.visualTabPage1.Border.Thickness = 1;
+            this.visualTabPage1.Border.Type = VisualPlus.Enumerators.ShapeType.Rectangle;
+            this.visualTabPage1.Border.Visible = false;
+            this.visualTabPage1.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            this.visualTabPage1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(181)))), ((int)(((byte)(187)))));
+            this.visualTabPage1.HeaderImage = null;
+            this.visualTabPage1.Image = null;
+            this.visualTabPage1.ImageSize = new System.Drawing.Size(16, 16);
+            this.visualTabPage1.Location = new System.Drawing.Point(4, 29);
+            this.visualTabPage1.Name = "visualTabPage1";
+            this.visualTabPage1.Size = new System.Drawing.Size(626, 365);
+            this.visualTabPage1.TabHover = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(36)))), ((int)(((byte)(38)))));
+            this.visualTabPage1.TabIndex = 1;
+            this.visualTabPage1.TabNormal = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(61)))), ((int)(((byte)(73)))));
+            this.visualTabPage1.TabSelected = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(76)))), ((int)(((byte)(88)))));
+            this.visualTabPage1.Text = "visualTabPage1";
+            this.visualTabPage1.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.visualTabPage1.TextImageRelation = VisualPlus.Toolkit.Child.VisualTabPage.TextImageRelations.Text;
+            this.visualTabPage1.TextLineAlignment = System.Drawing.StringAlignment.Center;
+            this.visualTabPage1.TextSelected = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(220)))), ((int)(((byte)(227)))));
             // 
             // Form1
             // 
@@ -634,7 +556,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.seekBar)).EndInit();
             this.visualPlayListTabs.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -656,10 +577,8 @@
         private VisualPlus.Toolkit.Controls.Interactivity.VisualButton visualBtRenamePlaylist;
         private VisualPlus.Toolkit.Controls.Interactivity.VisualButton visualBtLoadPlaylist;
         private VisualPlus.Toolkit.Controls.Navigation.VisualTabControl visualPlayListTabs;
-        private System.Windows.Forms.TabPage tabPage1;
-        private VisualPlus.Toolkit.Controls.DataManagement.VisualCheckedListBox visualCheckedListBox1;
-        private VisualPlus.Toolkit.Controls.Interactivity.VisualButton visualBtEnterNameOk;
         private VisualPlus.Toolkit.Controls.Editors.VisualTextBox visualTextBoxAddPlaylist;
+        private VisualPlus.Toolkit.Child.VisualTabPage visualTabPage1;
     }
 }
 
