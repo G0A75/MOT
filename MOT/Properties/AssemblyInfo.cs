@@ -1,17 +1,20 @@
-﻿using System.Reflection;
-using System.Runtime.CompilerServices;
+﻿#region Namespace
+
+using System.Reflection;
 using System.Runtime.InteropServices;
+
+#endregion
 
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("MOT")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Music Organization Tool")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("https://daveit1000.github.io/MOT/")]
 [assembly: AssemblyProduct("MOT")]
 [assembly: AssemblyCopyright("Copyright ©  2018")]
-[assembly: AssemblyTrademark("")]
+[assembly: AssemblyTrademark("https://daveit1000.github.io/MOT/")]
 [assembly: AssemblyCulture("")]
 
 // Setting ComVisible to false makes the types in this assembly not visible
@@ -23,12 +26,10 @@ using System.Runtime.InteropServices;
 [assembly: Guid("cafca30c-e7c8-449a-ba2d-ab5765424897")]
 
 // Version information for an assembly consists of the following four values:
-//
 //      Major Version
 //      Minor Version
 //      Build Number
 //      Revision
-//
 // You can specify all the values or you can default the Build and Revision Numbers
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]

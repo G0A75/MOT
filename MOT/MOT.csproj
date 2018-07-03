@@ -51,19 +51,47 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="filehelper.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <Compile Include="Utilities\PropertiesDialog.cs" />
+    <Compile Include="Controls\AudioController.cs">
+      <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Form1.cs">
+    <Compile Include="Controls\AudioController.Designer.cs">
+      <DependentUpon>AudioController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\MusicListView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\InputDialog.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Forms\InputDialog.Designer.cs">
+      <DependentUpon>InputDialog.cs</DependentUpon>
     </Compile>
+    <Compile Include="Managers\DialogManager.cs" />
+    <Compile Include="Managers\FileManager.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Forms\Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Main.Designer.cs">
+      <DependentUpon>Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Managers\ListManager.cs" />
+    <Compile Include="Managers\MusicManager.cs" />
+    <Compile Include="Native\Shell32.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Structure\Bytes.cs" />
+    <Compile Include="Structure\Extension.cs" />
+    <EmbeddedResource Include="Controls\AudioController.resx">
+      <DependentUpon>AudioController.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\InputDialog.resx">
+      <DependentUpon>InputDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Main.resx">
+      <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -88,5 +116,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

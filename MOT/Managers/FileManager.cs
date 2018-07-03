@@ -1,17 +1,28 @@
-namespace MOT
+#region Namespace
+
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+
+using MOT.Structure;
+
+#endregion
+
+namespace MOT.Managers
 {
-    #region Namespace
-
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using VisualPlus;
-
-    #endregion
-
-    internal class FileHelper
+    internal class FileManager
     {
-        #region Events
+        #region Methods
+
+        /// <summary>Retrieves all music files in the specified directory.</summary>
+        /// <param name="directory">The directory to browse.</param>
+        /// <param name="includeSubDirectories">Include searching sub directory.</param>
+        /// <returns>The <see cref="FileInfo" />.</returns>
+        public static List<string> LoadMusicFiles(string directory, bool includeSubDirectories = true)
+        {
+            return SearchDirectory(directory, Extension.SupportedExtensions(), includeSubDirectories).Select(file => file).ToList();
+        }
 
         /// <summary>Searches the directory for files.</summary>
         /// <param name="directory">The directory to search.</param>
@@ -28,10 +39,9 @@ namespace MOT
                 }
                 catch
                 {
-
+                    // ignored
                 }
-                
-                }
+            }
 
             if (extensionFilter.Count == 0)
             {
@@ -57,27 +67,6 @@ namespace MOT
             return _files;
         }
 
-        /// <summary>Example usage.</summary>
-        /*private void Usage()
-        {
-            var _extensions = new List<string>
-                {
-                    "*.mp3",
-                    "*.mp4",
-                    "*.wma"
-                };
-            
-           // VisualListBox visualListBox1 = new VisualListBox();
-           /// visualListBox1.Items.Clear();
-
-            var _files = SearchDirectory(@"C:\Folder", _extensions, false);
-
-            foreach (string _file in _files)
-            {
-              //  visualListBox1.Items.Add(_file);
-            }
-        }
-        */
         #endregion
     }
 }
