@@ -4,14 +4,13 @@ using System;
 using System.ComponentModel;
 using System.Drawing;
 using System.IO;
-using System.Timers;
 using System.Windows.Forms;
 
 using MOT.Managers;
 
 using NAudio.Wave;
 
-using Timer = System.Timers.Timer;
+using TagLib;
 
 #endregion
 
@@ -25,7 +24,7 @@ namespace MOT.Controls
         private AudioFileReader audioFile;
         private WaveOutEvent outputDevice;
         private int previousVolume;
-        private Timer timeElapsed;
+        private System.Timers.Timer timeElapsed;
 
         #endregion
 
@@ -52,8 +51,8 @@ namespace MOT.Controls
 
             tbTimeLine.Value = 0;
 
-            timeElapsed = new Timer
-                    {
+            timeElapsed = new System.Timers.Timer
+            {
                        Interval = 1000 
                     };
 
@@ -510,7 +509,8 @@ namespace MOT.Controls
             btPlay.Text = AudioControllerConstants.Pause;
             btPlay.Refresh();
 
-            lTitle.Text = file.FullName;
+            Tag fileTags = FileManager.GetFileTags(file.FullName);
+            lTitle.Text = $@"{fileTags.Title} - {fileTags.FirstAlbumArtist}";
 
             tbTimeLine.Enabled = true;
 
@@ -581,7 +581,7 @@ namespace MOT.Controls
         /// <summary>Occurs when the timer event is firing.</summary>
         /// <param name="sender">The sender.</param>
         /// <param name="e">The event args.</param>
-        private void TimeElapsed_Elapsed(object sender, ElapsedEventArgs e)
+        private void TimeElapsed_Elapsed(object sender, System.Timers.ElapsedEventArgs e)
         {
             OnSongPlaying();
 

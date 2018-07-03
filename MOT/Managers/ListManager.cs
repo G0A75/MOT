@@ -7,6 +7,8 @@ using System.Windows.Forms;
 
 using MOT.Structure;
 
+using TagLib;
+
 #endregion
 
 namespace MOT.Managers
@@ -25,17 +27,24 @@ namespace MOT.Managers
                 throw new NoNullAllowedException(nameof(file));
             }
 
-            if (!File.Exists(file))
+            if (!System.IO.File.Exists(file))
             {
                 throw new FileNotFoundException(nameof(file));
             }
 
             FileInfo fileInfo = new FileInfo(file);
 
+            Tag fileTag = FileManager.GetFileTags(file);
+
             ListViewItem item = new ListViewItem
                     {
-                       Text = Path.GetFileNameWithoutExtension(fileInfo.FullName) 
-                    };
+                       Text = fileTag.Title
+            };
+
+            ListViewItem.ListViewSubItem artistItem = new ListViewItem.ListViewSubItem
+                {
+                    Text = fileTag.FirstAlbumArtist
+            };
 
             TimeSpan duration = MusicManager.GetSongDuration(fileInfo);
 
@@ -56,6 +65,7 @@ namespace MOT.Managers
                        Text = fileInfo.FullName 
                     };
 
+            item.SubItems.Add(artistItem);
             item.SubItems.Add(durationItem);
             item.SubItems.Add(sizeItem);
             item.SubItems.Add(pathItem);

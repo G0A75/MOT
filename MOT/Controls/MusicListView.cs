@@ -12,6 +12,7 @@ namespace MOT.Controls
     {
         #region Variables
 
+        private ColumnHeader artistHeader;
         private ColumnHeader durationHeader;
         private ColumnHeader pathHeader;
         private ColumnHeader sizeHeader;
@@ -34,8 +35,14 @@ namespace MOT.Controls
 
             titleHeader = new ColumnHeader
                 {
-                    Text = @"File Name",
+                    Text = @"Title",
                     Width = 200
+                };
+
+            artistHeader = new ColumnHeader
+                {
+                    Text = @"Artist",
+                    Width = 100
                 };
 
             durationHeader = new ColumnHeader
@@ -57,6 +64,7 @@ namespace MOT.Controls
                 };
 
             Columns.Add(titleHeader);
+            Columns.Add(artistHeader);
             Columns.Add(durationHeader);
             Columns.Add(sizeHeader);
             Columns.Add(pathHeader);

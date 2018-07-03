@@ -7,6 +7,8 @@ using System.Linq;
 
 using MOT.Structure;
 
+using TagLib;
+
 #endregion
 
 namespace MOT.Managers
@@ -14,6 +16,19 @@ namespace MOT.Managers
     internal class FileManager
     {
         #region Methods
+
+        /// <summary>Retrieve the file tags from the file.</summary>
+        /// <param name="filePath">The file path.</param>
+        /// <returns>The <see cref="TagLib.Tag" />.</returns>
+        public static Tag GetFileTags(string filePath)
+        {
+            if (string.IsNullOrEmpty(filePath))
+            {
+                throw new FileNotFoundException(nameof(filePath));
+            }
+
+            return TagLib.File.Create(filePath).Tag;
+        }
 
         /// <summary>Retrieves all music files in the specified directory.</summary>
         /// <param name="directory">The directory to browse.</param>
