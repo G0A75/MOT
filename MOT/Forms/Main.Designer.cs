@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            VisualPlus.Structure.TextStyle textStyle3 = new VisualPlus.Structure.TextStyle();
             VisualPlus.Structure.TextStyle textStyle1 = new VisualPlus.Structure.TextStyle();
-            VisualPlus.Structure.TextStyle textStyle2 = new VisualPlus.Structure.TextStyle();
             this.cmsPlaylist = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.addToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -98,6 +98,7 @@
             this.toolStripSeparator9 = new System.Windows.Forms.ToolStripSeparator();
             this.editMetaDataToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.findDuplicatesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.albumCoverFinderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cmsPlaylist.SuspendLayout();
             this.tabController.SuspendLayout();
             this.tpMain.SuspendLayout();
@@ -490,11 +491,11 @@
             this.rtbLog.ShowSelectionMargin = false;
             this.rtbLog.Size = new System.Drawing.Size(654, 361);
             this.rtbLog.TabIndex = 0;
-            textStyle1.Disabled = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(129)))), ((int)(((byte)(129)))));
-            textStyle1.Enabled = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            textStyle1.Hover = System.Drawing.Color.Empty;
-            textStyle1.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
-            this.rtbLog.TextStyle = textStyle1;
+            textStyle3.Disabled = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(129)))), ((int)(((byte)(129)))));
+            textStyle3.Enabled = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            textStyle3.Hover = System.Drawing.Color.Empty;
+            textStyle3.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            this.rtbLog.TextStyle = textStyle3;
             // 
             // tlpMain
             // 
@@ -540,11 +541,11 @@
             this.visualGroupBox1.TextAlignment = System.Drawing.StringAlignment.Center;
             this.visualGroupBox1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.visualGroupBox1.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            textStyle2.Disabled = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(129)))), ((int)(((byte)(129)))));
-            textStyle2.Enabled = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            textStyle2.Hover = System.Drawing.Color.Empty;
-            textStyle2.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
-            this.visualGroupBox1.TextStyle = textStyle2;
+            textStyle1.Disabled = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(129)))), ((int)(((byte)(129)))));
+            textStyle1.Enabled = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            textStyle1.Hover = System.Drawing.Color.Empty;
+            textStyle1.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            this.visualGroupBox1.TextStyle = textStyle1;
             this.visualGroupBox1.TitleBoxHeight = 25;
             // 
             // lbPlaylists
@@ -716,6 +717,7 @@
             this.toolsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.preferencesToolStripMenuItem,
             this.toolStripSeparator9,
+            this.albumCoverFinderToolStripMenuItem,
             this.editMetaDataToolStripMenuItem,
             this.findDuplicatesToolStripMenuItem});
             this.toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
@@ -843,6 +845,13 @@
             this.findDuplicatesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.findDuplicatesToolStripMenuItem.Text = "Find Duplicates";
             // 
+            // albumCoverFinderToolStripMenuItem
+            // 
+            this.albumCoverFinderToolStripMenuItem.Enabled = false;
+            this.albumCoverFinderToolStripMenuItem.Name = "albumCoverFinderToolStripMenuItem";
+            this.albumCoverFinderToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.albumCoverFinderToolStripMenuItem.Text = "Album Cover Finder";
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -945,6 +954,7 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator9;
         private System.Windows.Forms.ToolStripMenuItem editMetaDataToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem findDuplicatesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem albumCoverFinderToolStripMenuItem;
     }
 }
 
