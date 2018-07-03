@@ -2,6 +2,7 @@
 
 using System;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
@@ -510,7 +511,21 @@ namespace MOT.Controls
             btPlay.Refresh();
 
             Tag fileTags = FileManager.GetFileTags(file.FullName);
-            lTitle.Text = $@"{fileTags.Title} - {fileTags.FirstAlbumArtist}";
+
+            // Determine if the artist is unknown or first one exists.
+            string unknownArtist = string.IsNullOrEmpty(fileTags.FirstAlbumArtist) ? "Unknown Artist" : fileTags.FirstAlbumArtist;
+
+            lTitle.Text = $@"{fileTags.Title} - by {unknownArtist}";
+
+            if (fileTags.Pictures.Length >= 1)
+            {
+                var imageData = fileTags.Pictures[0].Data.Data;
+                pbCover.Image = Image.FromStream(new MemoryStream(imageData)).GetThumbnailImage(pbCover.Size.Width, pbCover.Size.Height, null, IntPtr.Zero);
+            }
+            else
+            {
+                Debug.WriteLine("No cover album art to display.");
+            }
 
             tbTimeLine.Enabled = true;
 

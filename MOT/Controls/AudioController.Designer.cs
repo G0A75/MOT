@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            VisualPlus.Structure.TextStyle textStyle7 = new VisualPlus.Structure.TextStyle();
             VisualPlus.Structure.TextStyle textStyle1 = new VisualPlus.Structure.TextStyle();
             VisualPlus.Structure.TextStyle textStyle2 = new VisualPlus.Structure.TextStyle();
             VisualPlus.Structure.TextStyle textStyle3 = new VisualPlus.Structure.TextStyle();
             VisualPlus.Structure.TextStyle textStyle4 = new VisualPlus.Structure.TextStyle();
             VisualPlus.Structure.TextStyle textStyle5 = new VisualPlus.Structure.TextStyle();
-            VisualPlus.Structure.TextStyle textStyle6 = new VisualPlus.Structure.TextStyle();
             this.btPlay = new VisualPlus.Toolkit.Controls.Interactivity.VisualButton();
             this.lCurrent = new VisualPlus.Toolkit.Controls.Interactivity.VisualLabel();
             this.lDurationTotal = new VisualPlus.Toolkit.Controls.Interactivity.VisualLabel();
@@ -42,7 +42,9 @@
             this.lTitle = new VisualPlus.Toolkit.Controls.Interactivity.VisualLabel();
             this.pbVolume = new VisualPlus.Toolkit.Controls.DataVisualization.VisualProgressBar();
             this.visualLabel1 = new VisualPlus.Toolkit.Controls.Interactivity.VisualLabel();
+            this.pbCover = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.tbTimeLine)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCover)).BeginInit();
             this.SuspendLayout();
             // 
             // btPlay
@@ -72,11 +74,11 @@
             this.btPlay.TextAlignment = System.Drawing.StringAlignment.Center;
             this.btPlay.TextImageRelation = System.Windows.Forms.TextImageRelation.Overlay;
             this.btPlay.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            textStyle1.Disabled = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(129)))), ((int)(((byte)(129)))));
-            textStyle1.Enabled = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            textStyle1.Hover = System.Drawing.Color.Empty;
-            textStyle1.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
-            this.btPlay.TextStyle = textStyle1;
+            textStyle7.Disabled = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(129)))), ((int)(((byte)(129)))));
+            textStyle7.Enabled = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            textStyle7.Hover = System.Drawing.Color.Empty;
+            textStyle7.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            this.btPlay.TextStyle = textStyle7;
             this.btPlay.Click += new System.EventHandler(this.BtPlay_Click);
             // 
             // lCurrent
@@ -101,11 +103,11 @@
             this.lCurrent.Text = "00 : 00 : 00";
             this.lCurrent.TextAlignment = System.Drawing.StringAlignment.Center;
             this.lCurrent.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            textStyle2.Disabled = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(129)))), ((int)(((byte)(129)))));
-            textStyle2.Enabled = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            textStyle2.Hover = System.Drawing.Color.Empty;
-            textStyle2.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
-            this.lCurrent.TextStyle = textStyle2;
+            textStyle1.Disabled = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(129)))), ((int)(((byte)(129)))));
+            textStyle1.Enabled = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            textStyle1.Hover = System.Drawing.Color.Empty;
+            textStyle1.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            this.lCurrent.TextStyle = textStyle1;
             // 
             // lDurationTotal
             // 
@@ -130,11 +132,11 @@
             this.lDurationTotal.Text = "00 : 00 : 00";
             this.lDurationTotal.TextAlignment = System.Drawing.StringAlignment.Center;
             this.lDurationTotal.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            textStyle3.Disabled = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(129)))), ((int)(((byte)(129)))));
-            textStyle3.Enabled = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            textStyle3.Hover = System.Drawing.Color.Empty;
-            textStyle3.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
-            this.lDurationTotal.TextStyle = textStyle3;
+            textStyle2.Disabled = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(129)))), ((int)(((byte)(129)))));
+            textStyle2.Enabled = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            textStyle2.Hover = System.Drawing.Color.Empty;
+            textStyle2.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            this.lDurationTotal.TextStyle = textStyle2;
             // 
             // tbTimeLine
             // 
@@ -153,7 +155,7 @@
             // 
             this.lTitle.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.lTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lTitle.Location = new System.Drawing.Point(22, 25);
+            this.lTitle.Location = new System.Drawing.Point(73, 25);
             this.lTitle.MouseState = VisualPlus.Enumerators.MouseStates.Normal;
             this.lTitle.Name = "lTitle";
             this.lTitle.Orientation = System.Windows.Forms.Orientation.Horizontal;
@@ -166,16 +168,16 @@
             this.lTitle.ShadowDirection = 315;
             this.lTitle.ShadowLocation = new System.Drawing.Point(0, 0);
             this.lTitle.ShadowOpacity = 100;
-            this.lTitle.Size = new System.Drawing.Size(458, 32);
+            this.lTitle.Size = new System.Drawing.Size(407, 32);
             this.lTitle.TabIndex = 6;
             this.lTitle.Text = "Open audio...";
             this.lTitle.TextAlignment = System.Drawing.StringAlignment.Near;
             this.lTitle.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            textStyle4.Disabled = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(129)))), ((int)(((byte)(129)))));
-            textStyle4.Enabled = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            textStyle4.Hover = System.Drawing.Color.Empty;
-            textStyle4.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
-            this.lTitle.TextStyle = textStyle4;
+            textStyle3.Disabled = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(129)))), ((int)(((byte)(129)))));
+            textStyle3.Enabled = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            textStyle3.Hover = System.Drawing.Color.Empty;
+            textStyle3.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            this.lTitle.TextStyle = textStyle3;
             // 
             // pbVolume
             // 
@@ -210,11 +212,11 @@
             this.pbVolume.Style = System.Windows.Forms.ProgressBarStyle.Blocks;
             this.pbVolume.TabIndex = 7;
             this.pbVolume.Text = "visualProgressBar1";
-            textStyle5.Disabled = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(129)))), ((int)(((byte)(129)))));
-            textStyle5.Enabled = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            textStyle5.Hover = System.Drawing.Color.Empty;
-            textStyle5.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
-            this.pbVolume.TextStyle = textStyle5;
+            textStyle4.Disabled = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(129)))), ((int)(((byte)(129)))));
+            textStyle4.Enabled = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            textStyle4.Hover = System.Drawing.Color.Empty;
+            textStyle4.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            this.pbVolume.TextStyle = textStyle4;
             this.pbVolume.Value = 0;
             this.pbVolume.ValueAlignment = System.Drawing.StringAlignment.Center;
             // 
@@ -240,11 +242,19 @@
             this.visualLabel1.Text = "Volume:";
             this.visualLabel1.TextAlignment = System.Drawing.StringAlignment.Near;
             this.visualLabel1.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            textStyle6.Disabled = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(129)))), ((int)(((byte)(129)))));
-            textStyle6.Enabled = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            textStyle6.Hover = System.Drawing.Color.Empty;
-            textStyle6.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
-            this.visualLabel1.TextStyle = textStyle6;
+            textStyle5.Disabled = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(129)))), ((int)(((byte)(129)))));
+            textStyle5.Enabled = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            textStyle5.Hover = System.Drawing.Color.Empty;
+            textStyle5.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            this.visualLabel1.TextStyle = textStyle5;
+            // 
+            // pbCover
+            // 
+            this.pbCover.Location = new System.Drawing.Point(3, 3);
+            this.pbCover.Name = "pbCover";
+            this.pbCover.Size = new System.Drawing.Size(64, 64);
+            this.pbCover.TabIndex = 9;
+            this.pbCover.TabStop = false;
             // 
             // AudioController
             // 
@@ -252,6 +262,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gainsboro;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.Controls.Add(this.pbCover);
             this.Controls.Add(this.visualLabel1);
             this.Controls.Add(this.pbVolume);
             this.Controls.Add(this.lTitle);
@@ -262,6 +273,7 @@
             this.Name = "AudioController";
             this.Size = new System.Drawing.Size(564, 155);
             ((System.ComponentModel.ISupportInitialize)(this.tbTimeLine)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCover)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -276,5 +288,6 @@
         private VisualPlus.Toolkit.Controls.Interactivity.VisualLabel lTitle;
         private VisualPlus.Toolkit.Controls.DataVisualization.VisualProgressBar pbVolume;
         private VisualPlus.Toolkit.Controls.Interactivity.VisualLabel visualLabel1;
+        private System.Windows.Forms.PictureBox pbCover;
     }
 }
